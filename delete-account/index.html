@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <header>
-      <a class="brand" href="https://oldo.social/privacy">oldo<span>.</span></a>
-      <nav>
-        <a href="https://oldo.social/privacy">Privacy</a>
-        <a href="https://oldo.social/terms">Terms</a>
-        <a href="https://oldo.social/delete-account">Delete account</a>
-      </nav>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="https://oldo.social/privacy">oldo<span>.</span></a>
+        <nav aria-label="Legal">
+          <a href="https://oldo.social/privacy">Privacy</a>
+          <a href="https://oldo.social/terms">Terms</a>
+          <a href="https://oldo.social/delete-account" aria-current="page">Delete account</a>
+        </nav>
+      </div>
     </header>
-    <main>
-      <h1>Delete your Oldo account</h1>
+    <main class="doc">
+      <header class="doc-header">
+        <h1>Delete your Oldo account</h1>
+        <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+      </header>
       <p class="lead">
         This page is the web resource for requesting deletion of an Oldo app
         account (<code>com.oldo.app</code>). Deletion is completed
@@ -25,7 +30,7 @@
         itself.
       </p>
 
-      <section class="card">
+      <section>
         <h2>Delete in the app (required path)</h2>
         <ol class="steps">
           <li>Install or open <strong>Oldo</strong> on your Android device.</li>
@@ -39,7 +44,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>What deletion does</h2>
         <p>
           This deletes your account, your moods, and your messages. Reports you
@@ -60,7 +65,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>If you already uninstalled Oldo</h2>
         <p>
           Reinstall Oldo from the same distribution you used before (Play closed
@@ -77,7 +82,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>Sign-out is not deletion</h2>
         <p>
           Signing out only clears the session on your device. Your account and
@@ -85,8 +90,13 @@
         </p>
       </section>
     </main>
-    <footer>
-      <p>Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+    <footer class="site-footer">
+      <nav aria-label="Legal footer">
+        <a href="https://oldo.social/privacy">Privacy</a>
+        <a href="https://oldo.social/terms">Terms</a>
+        <a href="https://oldo.social/delete-account" aria-current="page">Delete account</a>
+      </nav>
+      <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
     </footer>
   </body>
 </html>

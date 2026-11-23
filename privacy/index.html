@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <header>
-      <a class="brand" href="https://oldo.social/privacy">oldo<span>.</span></a>
-      <nav>
-        <a href="https://oldo.social/privacy">Privacy</a>
-        <a href="https://oldo.social/terms">Terms</a>
-        <a href="https://oldo.social/delete-account">Delete account</a>
-      </nav>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="https://oldo.social/privacy">oldo<span>.</span></a>
+        <nav aria-label="Legal">
+          <a href="https://oldo.social/privacy" aria-current="page">Privacy</a>
+          <a href="https://oldo.social/terms">Terms</a>
+          <a href="https://oldo.social/delete-account">Delete account</a>
+        </nav>
+      </div>
     </header>
-    <main>
-      <h1>Privacy Policy</h1>
+    <main class="doc">
+      <header class="doc-header">
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+      </header>
       <p class="lead">
         This privacy policy describes how the Oldo Android app
         (<code>com.oldo.app</code>) handles information. Oldo is an independent
@@ -24,7 +29,7 @@
         today — it is not legal advice.
       </p>
 
-      <section class="card">
+      <section>
         <h2>1. Who this covers</h2>
         <p>
           Oldo is a mobile app where people sign in, post short “moods,” browse
@@ -34,7 +39,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>2. Information we collect</h2>
         <ul>
           <li>
@@ -81,7 +86,7 @@
         </ul>
       </section>
 
-      <section class="card">
+      <section>
         <h2>3. How we use information</h2>
         <ul>
           <li>Create and secure your account and sessions.</li>
@@ -100,7 +105,7 @@
         </ul>
       </section>
 
-      <section class="card">
+      <section>
         <h2>4. Sharing with service providers</h2>
         <p>We do not sell your personal information. We use processors needed to run Oldo:</p>
         <ul>
@@ -134,7 +139,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>5. Retention and deletion</h2>
         <ul>
           <li>
@@ -163,7 +168,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>6. Security</h2>
         <p>
           We use HTTPS for the production API, authenticated requests for
@@ -172,7 +177,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>7. Children</h2>
         <p>
           Oldo is for people <strong>18 and older</strong> only. We do not
@@ -180,7 +185,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>8. Changes</h2>
         <p>
           If how Oldo handles data changes in a material way, we will update
@@ -190,7 +195,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section>
         <h2>9. Contact</h2>
         <p>
           Oldo is an independent project and does not currently publish a
@@ -200,8 +205,13 @@
         </p>
       </section>
     </main>
-    <footer>
-      <p>Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+    <footer class="site-footer">
+      <nav aria-label="Legal footer">
+        <a href="https://oldo.social/privacy" aria-current="page">Privacy</a>
+        <a href="https://oldo.social/terms">Terms</a>
+        <a href="https://oldo.social/delete-account">Delete account</a>
+      </nav>
+      <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
     </footer>
   </body>
 </html>

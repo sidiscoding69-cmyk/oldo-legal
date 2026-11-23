@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Oldo</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="https://oldo.social/privacy">oldo<span>.</span></a>
+      <nav>
+        <a href="https://oldo.social/privacy">Privacy</a>
+        <a href="https://oldo.social/terms">Terms</a>
+        <a href="https://oldo.social/delete-account">Delete account</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Privacy Policy</h1>
+      <p class="lead">
+        This privacy policy describes how the Oldo Android app
+        (<code>com.oldo.app</code>) handles information. Oldo is an independent
+        project. This page is a product disclosure based on how the app works
+        today — it is not legal advice.
+      </p>
+
+      <section class="card">
+        <h2>1. Who this covers</h2>
+        <p>
+          Oldo is a mobile app where people sign in, post short “moods,” browse
+          others, send interest, and chat after a match. The public experience is
+          <strong>pseudonymous</strong>: other users see a generated pseudonym,
+          not your Google name, email, or profile photo.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>2. Information we collect</h2>
+        <ul>
+          <li>
+            <strong>Google account identifiers.</strong> When you sign in with
+            Google, our servers verify your Google ID token and store the
+            provider subject id needed to recognize your account. We may store
+            email if Google provides it for account operations; it is
+            <strong>not</strong> shown to other users in the app.
+          </li>
+          <li>
+            <strong>Age.</strong> You confirm you are 18+. Separately, you may
+            set a write-once birth <strong>year and month</strong> used to
+            compute age for matching preferences (who can see whose moods).
+          </li>
+          <li>
+            <strong>Moods.</strong> Niche choice and optional description text,
+            expiry time, and age-preference range for that mood.
+          </li>
+          <li>
+            <strong>Chat.</strong> Message bodies and related conversation
+            metadata when you match and chat with someone.
+          </li>
+          <li>
+            <strong>Safety actions.</strong> Blocks, reports, and related
+            snapshots needed to handle abuse.
+          </li>
+          <li>
+            <strong>Device push token.</strong> On Android, an Expo push token
+            (via Expo / Google FCM) so we can send notifications while the app
+            is backgrounded or closed.
+          </li>
+          <li>
+            <strong>App / session tech data.</strong> Session tokens (access +
+            refresh). The refresh token is stored in Android
+            <strong>SecureStore</strong> on your device so you can stay signed
+            in after kill/relaunch. We also receive standard request metadata
+            needed to run the API (for example approximate client IP for
+            rate limiting).
+          </li>
+          <li>
+            <strong>App version header.</strong> The app sends a minimum app
+            version header so outdated clients can be rejected.
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>3. How we use information</h2>
+        <ul>
+          <li>Create and secure your account and sessions.</li>
+          <li>Show feeds, interests, matches, and chat.</li>
+          <li>Apply age preferences and safety tools (block / report / suspend).</li>
+          <li>
+            Generate embeddings for mood text so “For you” / similarity features
+            can work (see below).
+          </li>
+          <li>
+            Send push notifications with <strong>generic</strong> titles only
+            (for example “New message”, “New request”, “New match”) — not the
+            message or mood body.
+          </li>
+          <li>Rate-limit abuse and keep the service reliable.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>4. Sharing with service providers</h2>
+        <p>We do not sell your personal information. We use processors needed to run Oldo:</p>
+        <ul>
+          <li>
+            <strong>Google</strong> — Sign-In identity verification; Android push
+            delivery involves Google Play services / FCM as used by Expo.
+          </li>
+          <li>
+            <strong>OpenAI</strong> — Mood description (and related niche label
+            text used for embedding) is sent to OpenAI’s embeddings API
+            (<code>text-embedding-3-small</code>) so we can store a vector for
+            matching features. See
+            <a href="https://openai.com/policies/privacy-policy" rel="noopener noreferrer"
+              >OpenAI’s privacy policy</a
+            >.
+          </li>
+          <li>
+            <strong>Expo</strong> — Expo Push API delivers notifications using
+            your device token.
+          </li>
+          <li>
+            <strong>Hosting providers</strong> — Application API, database, and
+            worker currently run on Railway when deployed; this website is
+            intended to be served from Hostinger static hosting for
+            <code>oldo.social</code>.
+          </li>
+        </ul>
+        <p class="note">
+          Other users in a match can see your pseudonym, moods you share on the
+          feed, and chat messages you send them.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>5. Retention and deletion</h2>
+        <ul>
+          <li>
+            You can <strong>sign out</strong> without deleting your account
+            (session cleared on device; account remains).
+          </li>
+          <li>
+            You can <strong>delete your account</strong> in the app:
+            Settings → Delete account. That soft-deletes the account, scrubs
+            mood text and your message bodies, removes push tokens, revokes
+            refresh sessions, and unlinks Google identity so the same Google
+            account can create a <strong>new</strong> Oldo user later.
+          </li>
+          <li>
+            <strong>Reports</strong> may be kept for up to
+            <strong>90 days</strong> for safety after deletion, then pruned.
+          </li>
+          <li>
+            Inactive push tokens may be pruned after prolonged non-use (on the
+            order of 60 days for unseen tokens).
+          </li>
+        </ul>
+        <p>
+          Web instructions:
+          <a href="https://oldo.social/delete-account">Delete your Oldo account</a>.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>6. Security</h2>
+        <p>
+          We use HTTPS for the production API, authenticated requests for
+          account data, and on-device SecureStore for the refresh token. No
+          method of transmission or storage is 100% secure.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>7. Children</h2>
+        <p>
+          Oldo is for people <strong>18 and older</strong> only. We do not
+          knowingly create accounts for children.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>8. Changes</h2>
+        <p>
+          If how Oldo handles data changes in a material way, we will update
+          this page. Continued use after an update means you should re-read
+          this policy when prompted by the app (for example when accepting
+          terms at sign-in).
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>9. Contact</h2>
+        <p>
+          Oldo is an independent project and does not currently publish a
+          support email on this site. Account and data deletion is handled
+          in-app as described on the
+          <a href="https://oldo.social/delete-account">delete account</a> page.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+    </footer>
+  </body>
+</html>

@@ -68,11 +68,16 @@
             <strong>Voice calls.</strong> When voice is enabled and you use I’m
             free / Call, we store <strong>call session metadata</strong> (for
             example session id, participants, channel id, start/end times,
-            status and end reason). We request
+            status and end reason) and short-lived
+            <strong>availability / presence</strong> fields on the match
+            (free-until window and last call-seen time) so Call only works while
+            the peer is available in-app. We request
             <strong>microphone</strong> permission to send your voice during an
             active call. <strong>Oldo does not record or store call audio.</strong>
             Audio travels device ↔ our voice processor (Agora) ↔ the other
-            person for the duration of the call only (in transit).
+            person for the duration of the call only (in transit). Calls may last
+            up to about one hour; the product is not designed for recording or
+            long archived conversations by voice.
           </li>
           <li>
             <strong>Safety actions.</strong> Blocks, reports, and related
@@ -114,11 +119,11 @@
             can work (see below).
           </li>
           <li>
-            Send push notifications with <strong>generic</strong> titles only
-            (for example “New message”, “New request”, “New match”) — not the
-            message or mood body. Ringing for voice currently relies on the app
-            being open / polling while you are marked free — not a separate
-            “incoming call” push.
+            Send push notifications with <strong>generic</strong> wording
+            (notification title “oldo”; body such as “New message”,
+            “New request”, or “New match”) — not the message or mood body.
+            Ringing for voice currently relies on the app being open / polling
+            while you are marked free — not a separate “incoming call” push.
           </li>
           <li>Rate-limit abuse and keep the service reliable.</li>
         </ul>

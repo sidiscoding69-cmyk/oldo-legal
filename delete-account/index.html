@@ -20,7 +20,7 @@
     <main class="doc">
       <header class="doc-header">
         <h1>Delete your Oldo account</h1>
-        <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+        <p class="meta">Last updated: 25 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
       </header>
       <p class="lead">
         This page is the web resource for requesting deletion of an Oldo app
@@ -56,6 +56,11 @@
           <li>Account is marked deleted; you cannot keep using that user id.</li>
           <li>Mood text is scrubbed; embeddings cleared.</li>
           <li>Your chat message bodies are scrubbed.</li>
+          <li>Any ringing or active voice calls involving you are ended.</li>
+          <li>
+            Call session metadata (ids / timestamps / status — not audio) may
+            remain.
+          </li>
           <li>Push tokens for that account are removed.</li>
           <li>Sessions are revoked; Google identity is unlinked from that user.</li>
         </ul>
@@ -96,7 +101,7 @@
         <a href="https://oldo.social/terms">Terms</a>
         <a href="https://oldo.social/delete-account" aria-current="page">Delete account</a>
       </nav>
-      <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+      <p class="meta">Last updated: 25 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
     </footer>
   </body>
 </html>

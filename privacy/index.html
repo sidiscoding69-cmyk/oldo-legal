@@ -20,7 +20,7 @@
     <main class="doc">
       <header class="doc-header">
         <h1>Privacy Policy</h1>
-        <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+        <p class="meta">Last updated: 25 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
       </header>
       <p class="lead">
         This privacy policy describes how the Oldo Android app
@@ -33,9 +33,10 @@
         <h2>1. Who this covers</h2>
         <p>
           Oldo is a mobile app where people sign in, post short “moods,” browse
-          others, send interest, and chat after a match. The public experience is
-          <strong>pseudonymous</strong>: other users see a generated pseudonym,
-          not your Google name, email, or profile photo.
+          others, send interest, chat after a match, and optionally place a
+          short voice call when someone marks <strong>I’m free</strong>. The
+          public experience is <strong>pseudonymous</strong>: other users see a
+          generated pseudonym, not your Google name, email, or profile photo.
         </p>
       </section>
 
@@ -60,11 +61,23 @@
           </li>
           <li>
             <strong>Chat.</strong> Message bodies and related conversation
-            metadata when you match and chat with someone.
+            metadata when you match and chat with someone. System notices such
+            as “Missed call” or “Call declined” may appear in the thread.
+          </li>
+          <li>
+            <strong>Voice calls.</strong> When voice is enabled and you use I’m
+            free / Call, we store <strong>call session metadata</strong> (for
+            example session id, participants, channel id, start/end times,
+            status and end reason). We request
+            <strong>microphone</strong> permission to send your voice during an
+            active call. <strong>Oldo does not record or store call audio.</strong>
+            Audio travels device ↔ our voice processor (Agora) ↔ the other
+            person for the duration of the call only (in transit).
           </li>
           <li>
             <strong>Safety actions.</strong> Blocks, reports, and related
-            snapshots needed to handle abuse.
+            snapshots needed to handle abuse. An in-call report may reference a
+            call session id; it does <strong>not</strong> include audio.
           </li>
           <li>
             <strong>Device push token.</strong> On Android, an Expo push token
@@ -91,6 +104,10 @@
         <ul>
           <li>Create and secure your account and sessions.</li>
           <li>Show feeds, interests, matches, and chat.</li>
+          <li>
+            Run optional voice calls between matched users (place, ring, accept,
+            decline, end) and keep the call working while both stay in the app.
+          </li>
           <li>Apply age preferences and safety tools (block / report / suspend).</li>
           <li>
             Generate embeddings for mood text so “For you” / similarity features
@@ -99,7 +116,9 @@
           <li>
             Send push notifications with <strong>generic</strong> titles only
             (for example “New message”, “New request”, “New match”) — not the
-            message or mood body.
+            message or mood body. Ringing for voice currently relies on the app
+            being open / polling while you are marked free — not a separate
+            “incoming call” push.
           </li>
           <li>Rate-limit abuse and keep the service reliable.</li>
         </ul>
@@ -123,19 +142,30 @@
             >.
           </li>
           <li>
+            <strong>Agora</strong> — Real-time voice for matched calls. Call
+            audio is transmitted through Agora’s network between your devices;
+            Oldo’s API does not proxy or store that audio. Agora receives what
+            is needed to join a channel (for example App ID, channel name, and a
+            short-lived token our servers mint). See
+            <a href="https://www.agora.io/en/privacy-policy/" rel="noopener noreferrer"
+              >Agora’s privacy policy</a
+            >.
+          </li>
+          <li>
             <strong>Expo</strong> — Expo Push API delivers notifications using
             your device token.
           </li>
           <li>
             <strong>Hosting providers</strong> — Application API, database, and
             worker currently run on Railway when deployed; this website is
-            intended to be served from Hostinger static hosting for
-            <code>oldo.social</code>.
+            served via GitHub Pages for <code>oldo.social</code> (DNS may use
+            Hostinger).
           </li>
         </ul>
         <p class="note">
           Other users in a match can see your pseudonym, moods you share on the
-          feed, and chat messages you send them.
+          feed, chat messages you send them, and hear your voice during a call
+          they join with you.
         </p>
       </section>
 
@@ -150,8 +180,14 @@
             You can <strong>delete your account</strong> in the app:
             Settings → Delete account. That soft-deletes the account, scrubs
             mood text and your message bodies, removes push tokens, revokes
-            refresh sessions, and unlinks Google identity so the same Google
-            account can create a <strong>new</strong> Oldo user later.
+            refresh sessions, ends any ringing or active calls involving you,
+            and unlinks Google identity so the same Google account can create a
+            <strong>new</strong> Oldo user later.
+          </li>
+          <li>
+            <strong>Call session rows</strong> (ids, timestamps, status/end
+            reason — <strong>not</strong> audio) may remain after deletion for
+            integrity and safety correlation.
           </li>
           <li>
             <strong>Reports</strong> may be kept for up to
@@ -172,8 +208,10 @@
         <h2>6. Security</h2>
         <p>
           We use HTTPS for the production API, authenticated requests for
-          account data, and on-device SecureStore for the refresh token. No
-          method of transmission or storage is 100% secure.
+          account data, and on-device SecureStore for the refresh token. Voice
+          credentials (tokens) are short-lived and minted only for an
+          <strong>active</strong> call. No method of transmission or storage is
+          100% secure.
         </p>
       </section>
 
@@ -211,7 +249,7 @@
         <a href="https://oldo.social/terms">Terms</a>
         <a href="https://oldo.social/delete-account">Delete account</a>
       </nav>
-      <p class="meta">Last updated: 23 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
+      <p class="meta">Last updated: 25 November 2026 · Oldo (<code>com.oldo.app</code>)</p>
     </footer>
   </body>
 </html>

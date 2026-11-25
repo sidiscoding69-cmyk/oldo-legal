@@ -121,9 +121,10 @@
           <li>
             Send push notifications with <strong>generic</strong> wording
             (notification title “oldo”; body such as “New message”,
-            “New request”, or “New match”) — not the message or mood body.
-            Ringing for voice currently relies on the app being open / polling
-            while you are marked free — not a separate “incoming call” push.
+            “New request”, “New match”, or “Incoming call”) — not the message
+            or mood body, and not call audio. An incoming-call push is a wake-up
+            only; whether a call is still ringing is confirmed by the app when
+            it opens. Call control still uses in-app polling / call state.
           </li>
           <li>Rate-limit abuse and keep the service reliable.</li>
         </ul>
